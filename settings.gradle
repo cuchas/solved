@@ -1,0 +1,4 @@
+rootProject.name = 'javacommandline'
+include 'main'
+rootProject.name = 'JavaCommandline'
+
