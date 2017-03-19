@@ -18,6 +18,8 @@ to help myself (and you now) review and practice stuff you no longer see in your
 
 * Write an algorithm that takes two strings and returns a boolean value indicating if the strings are anagrams. If you don't know what an anagram is, search for the word (not the algorithm) online. What is the time complexity of this algorithm?
 
+* Write a function that, given a positive integer N, returns the length of its longest binary gap. The function should return 0 if N doesn't contain a binary gap.
+
 * Let a to z be the first 26 prime numbers. Let A to Z be 2 to the power of a to z (i.e. A=2^a, B=2^b ... Z=2^z). What is the numerical value of the following expression: (A - T) * (B - T) * (C - T) * ... * (Z - T).
 
 
