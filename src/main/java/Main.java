@@ -1,4 +1,4 @@
-import java.util.Random;
+import java.util.*;
 
 /**
  * Created by eduardocucharro on 19/02/17.
@@ -27,6 +27,35 @@ public class Main {
         searchStrings();
 
         checkPalindrome();
+
+        intToBinary();
+    }
+
+    private static void intToBinary() {
+        int number = 1041;
+
+        Byte[] bytes = convertToBinary(number);
+
+        int realNumber = convertBinaryToDecimal(bytes);
+
+        System.out.print(realNumber + " in binary is : ");
+
+        for(Byte b : bytes) {
+            System.out.print(b);
+        }
+
+        System.out.print("and the binary gap is " + binaryGap(bytes));
+    }
+
+    private static int convertBinaryToDecimal(Byte[] bytes) {
+
+        int number = 0;
+
+        for(int i = 0; i < bytes.length; i++) {
+            number += bytes[i] * Math.pow(2, ((bytes.length - i) - 1));
+        }
+
+        return number;
     }
 
     private static void printArray(int[] array) {
@@ -262,9 +291,6 @@ public class Main {
         }
     }
 
-
-
-
     public static boolean isPalindrome(String s) {
         char[] chars = s.toUpperCase().toCharArray();
 
@@ -285,5 +311,50 @@ public class Main {
         }
 
         return true;
+    }
+
+    public static Byte[] convertToBinary(int number) {
+        List<Byte> list = new ArrayList();
+
+        int result = number;
+
+        while(result > 0) {
+            int remainder = result % 2;
+            result = result / 2;
+
+            byte b = Byte.parseByte(String.valueOf(remainder));
+
+            list.add(b);
+        }
+
+        Byte[] objects = new Byte[list.size()];
+        Byte[] reversed = new Byte[list.size()];
+
+        list.toArray(objects);
+
+        for(int i = objects.length; i > 0; i--) {
+            reversed[objects.length - i] = objects[i-1];
+        }
+
+        return reversed;
+    }
+
+    public static int binaryGap(Byte[] bits) {
+        int gap = 0;
+        int tempGap = 0;
+
+        for(Byte b : bits) {
+            if(b == 1) {
+                if(tempGap > gap) {
+                    gap = tempGap;
+                }
+
+                tempGap = 0;
+            } else {
+                tempGap += 1;
+            }
+        }
+
+        return gap;
     }
 }
