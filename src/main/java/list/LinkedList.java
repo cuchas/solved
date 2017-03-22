@@ -1,33 +1,18 @@
-package dataStructures;
+package list;
 
 /**
  * Created by eduardocucharro on 20/03/17.
  */
-//LinkedList com acesso pelo head ou pela tail
-public class DoublyEndedList<T> {
+//Ordenado de tras pra frente, já que o head é sempre o último inserido
+public class LinkedList<T> {
+    Node<T> head;
 
-    private Node<T> head;
-    private Node<T> tail;
 
     public void insertAtHead(T data) {
         Node<T> newNode = new Node<T>(data);
         newNode.setNext(head);
 
         head = newNode;
-    }
-
-    public void insertAtTail(T data) {
-
-        Node<T> n = new Node<T>(data);
-
-        if(head == null) {
-            head = n;
-        }
-
-        if(tail != null)
-            tail.setNext(n);
-
-        tail = n;
     }
 
     @Override
