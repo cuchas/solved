@@ -24,7 +24,21 @@ public class Node<T> {
     }
 
     @Override
+    public boolean equals(Object obj) {
+
+        if(obj == null) return false;
+
+        Node<T> n = (Node<T>)obj;
+
+        return n.getData() == getData();
+    }
+
+    @Override
     public String toString() {
-        return String.format("Data is %d", data);
+        return String.format("Data is %s", data);
+    }
+
+    public <T> void setData(T data) {
+        this.data = data;
     }
 }
