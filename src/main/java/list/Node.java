@@ -38,7 +38,7 @@ public class Node<T> {
         return String.format("Data is %s", data);
     }
 
-    public <T> void setData(T data) {
+    public void setData(T data) {
         this.data = data;
     }
 }
