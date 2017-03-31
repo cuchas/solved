@@ -35,18 +35,54 @@ public class BinarySearchTree {
         root.traverse(root);
     }
 
-    public Integer leafNodes() {
-        if(root == null) return 0;
-        return root.leafNodes();
+    public void leafNodes() {
+        if(root == null) return;
+        root.leafNodes();
     }
 
     public Integer height() {
-        //TODO find the tree height
-        return 0;
+        if(root == null) return 0;
+        return root.height();
     }
 
     public void insertOrdered(Integer[] collection) {
-        //TODO insert making tree with least height possible
+        int half = (int)Math.floor(collection.length / 2);
+        int remainder = (int)Math.ceil(collection.length % 2);
+
+        int[][] b = new int[half + remainder][2];
+
+        int j = 0;
+
+        for(int i = 0; i < collection.length; i+=2) {
+            b[j][0] = collection[i];
+
+            if(remainder == 0) {
+                b[j][1] = collection[i+1];
+            } else {
+                if(i != collection.length -1) {
+                    b[j][1] = collection[i+1];
+                }
+            }
+
+            j++;
+        }
+
+        int h = (int)Math.floor(b.length / 2);
+
+        int x = h;
+        int y = h + 1;
+
+        while(x >= 0) {
+            insert(b[x][0]);
+            insert(b[x][1]);
+            x--;
+        }
+
+        while(y < b.length) {
+            insert(b[y][1]);
+            insert(b[y][0]);
+            y++;
+        }
     }
 
     //soft delete

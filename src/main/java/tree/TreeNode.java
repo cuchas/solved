@@ -88,16 +88,24 @@ public class TreeNode {
         this.deleted = deleted;
     }
 
-    public int leafNodes() {
+    public void leafNodes() {
+        if(rightChild == null && leftChild == null) {
+            System.out.println(data);
+        }
+
+        if(leftChild != null) leftChild.leafNodes();
+
+        if(rightChild != null) rightChild.leafNodes();
+    }
+
+    public int height() {
         if(rightChild == null && leftChild == null) {
             return 1;
         }
 
-        if(leftChild != null) return 1 + leftChild.leafNodes();
+        if(leftChild != null) return 1 + leftChild.height();
 
-        if(rightChild != null) return 1 + rightChild.leafNodes();
-
-        return 0;
+        return 1 + rightChild.height();
     }
 
     public void traverse(TreeNode node) {
