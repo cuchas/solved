@@ -1,5 +1,10 @@
 
 import org.junit.Test;
+import tdd.Bank;
+import tdd.Expression;
+import tdd.Money;
+import tdd.Sum;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;

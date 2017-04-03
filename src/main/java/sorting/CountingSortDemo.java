@@ -1,19 +1,12 @@
 package sorting;
 
-import java.util.Random;
-
 /**
  * Created by eduardocucharro on 31/03/17.
  */
 public class CountingSortDemo {
 
     public static void main(String[] args) {
-        int[] a = new int[200];
-        Random r = new Random();
-
-        for(int i = 0; i < a.length; i++) {
-            a[i] = r.nextInt(200);
-        }
+        int[] a = SortingUtil.generate();
 
         int[] sorted = new int[a.length];
 

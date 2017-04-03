@@ -12,7 +12,7 @@ to help myself (and you now) review and practice stuff you no longer see in your
 
 * Write an algorithm that Insert sort the set (30, 15, 40, 1, 3, 4, 50, 2, 12)
 
-* Write the insertion sort algorithm, which takes an array of employee and sorts them in order of their employee number. Write a class Employee, which represents an employee in a company. The employee has a employeeNumber (9 digit number), firstName, lastName and emailId as member variables. Create a few employee objects and store them in an array.
+* Write the insertion sort algorithm, which takes an array of employee and sorts them in order of their employee number. Write a class tdd.Employee, which represents an employee in a company. The employee has a employeeNumber (9 digit number), firstName, lastName and emailId as member variables. Create a few employee objects and store them in an array.
 
 * Write an algorithm which checks if there are duplicate characters in a string. The method signature would look something like public boolean hasDuplicateChars(String s) . If we pass "anaconda" the method should return true (repeated char 'a'). If we pass 'great', the method should return false, because there are no duplicate characters in the string. What is the time complexity of this algorithm? If we know that the string contains ONLY ASCII characters, can we improve the algorithm?
 
@@ -26,7 +26,7 @@ A zero-indexed array A consisting of N integers is given. An equilibrium index o
 
 A[0] + A[1] + ... + A[P−1] = A[P+1] + ... + A[N−2] + A[N−1].
 
-Sum of zero elements is assumed to be equal to 0. This can happen if P = 0 or if P = N−1.
+tdd.Sum of zero elements is assumed to be equal to 0. This can happen if P = 0 or if P = N−1.
 
 For example, consider the following array A consisting of N = 8 elements:
 

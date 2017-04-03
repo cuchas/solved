@@ -3,7 +3,7 @@ package sorting;
 /**
  * Created by eduardocucharro on 29/03/17.
  */
-public class MergeSort {
+public class MergeSortDemo {
 
     public static void main(String[] args) {
         int a[] = new int[] { 4, 5, 6, 1, 2, 3 };

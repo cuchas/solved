@@ -1,7 +1,9 @@
+package tdd;
+
 /**
  * Created by eduardocucharro on 17/03/17.
  */
-class Employee implements Comparable {
+public class Employee implements Comparable {
 
     private int mNumber;
     private String mFirstName, mLastName, mEmail;

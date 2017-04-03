@@ -1,6 +1,6 @@
 package sorting;
 
-import java.util.Random;
+import static sorting.SortingUtil.printArray;
 
 /**
  * Created by eduardocucharro on 03/04/17.
@@ -9,12 +9,7 @@ public class QuickSortDemo {
 
     public static void main(String[] args) {
 
-        int[] a = new int[200];
-        Random r = new Random();
-
-        for(int i = 0; i < a.length; i++) {
-            a[i] = r.nextInt(200);
-        }
+        int[] a = SortingUtil.generate();
 
         System.out.println("Unsorted Collection");
         printArray(a);
@@ -58,12 +53,5 @@ public class QuickSortDemo {
         a[end] = x;
 
         return i;
-    }
-
-    private static void printArray(int[] n) {
-
-        for(int x : n) {
-            System.out.print(x + " ");
-        }
     }
 }
