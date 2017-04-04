@@ -1,11 +1,10 @@
-package sorting;
-
 import java.util.Random;
+
 
 /**
  * Created by eduardocucharro on 03/04/17.
  */
-public class SortingUtil {
+public class DemoHelper {
     public static int[] generate() {
         int[] a = new int[10];
         Random r = new Random();
