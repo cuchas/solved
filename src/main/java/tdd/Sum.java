@@ -4,8 +4,8 @@ package tdd;
  * Created by eduardocucharro on 10/03/17.
  */
 public class Sum implements Expression {
-    Money augend;
-    Money addend;
+    public Money augend;
+    public Money addend;
 
     public Sum(Money augend, Money addend) {
         this.augend = augend;

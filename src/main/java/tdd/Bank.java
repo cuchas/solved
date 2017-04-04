@@ -12,7 +12,7 @@ public class Bank {
         addRate("CHF", "USD", 2);
     }
 
-    Money reduce(Expression source, String to) {
+    public Money reduce(Expression source, String to) {
         return source.reduce(this, to);
     }
 
