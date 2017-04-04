@@ -1,45 +1,51 @@
 package problems;
 
-import static util.Util.convertBinaryToDecimal;
-import static util.Util.convertToBinary;
-
 /**
  * Created by eduardocucharro on 04/04/17.
  */
 public class BinaryGapDemo {
 
     public static void main(String[] args) {
-        int number = 1041;
+        //Convert decimal to binary
+        //Loop no array somando sempre que tiver 0 e sobrepondo só quando for maior
 
-        Byte[] bytes = convertToBinary(number);
-
-        int realNumber = convertBinaryToDecimal(bytes);
-
-        System.out.print(realNumber + " in binary is : ");
-
-        for(Byte b : bytes) {
-            System.out.print(b);
-        }
-
-        System.out.print("and the binary gap is " + binaryGap(bytes));
+        System.out.println("9 gap should be 2, result was " + binaryGap(9));
+        System.out.println("529 gap should be 4, result was " + binaryGap(529));
+        System.out.println("20 gap should be 1, result was " + binaryGap(20));
+        System.out.println("15 gap should be 0, result was " + binaryGap(15));
+        System.out.println("1041 gap should be 5, result was " + binaryGap(1041));
+        System.out.println("6 gap should be 0, result was " + binaryGap(6));
+        System.out.println("328 gap should be 2, result was " + binaryGap(328));
     }
 
-    public static int binaryGap(Byte[] bits) {
-        int gap = 0;
-        int tempGap = 0;
+    public static int binaryGap(int number) {
+        //char array
+        //um contador para saber se encontrou binary gay
+        //array de resultados de count
 
-        for(Byte b : bits) {
-            if(b == 1) {
-                if(tempGap > gap) {
-                    gap = tempGap;
+        String s = Integer.toBinaryString(number);
+        char[] chars = s.toCharArray();
+        int sum = 0;
+        int sum2 = 0;
+        int result = 0;
+
+        for(char c : chars) {
+            if(c == '1') {
+                if(sum + 1 == 2) {
+                    if(sum2 > result)
+                        result = sum2;
+                    sum2 = 0;
+                } else {
+                    sum++;
                 }
 
-                tempGap = 0;
             } else {
-                tempGap += 1;
+                if(sum > 0) {
+                    sum2++;
+                }
             }
         }
 
-        return gap;
+        return result;
     }
 }
