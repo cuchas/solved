@@ -51,4 +51,19 @@ public class FrogJmpTest {
 
         assertEquals(expected, result);
     }
+
+    @Test
+    public void test_3() {
+        int X = 5;
+        int Y = 105;
+        int D = 3;
+
+        int expected = 34;
+
+        FrogJmp o = new FrogJmp();
+
+        int result = o.solution(X, Y, D);
+
+        assertEquals(expected, result);
+    }
 }

@@ -8,13 +8,13 @@ public class FrogJmp {
 
         if(X == Y) return 0;
 
-        int Z = X + D;
+        int Z = Y - X;
 
-        int r = Y%Z;
+        int r = Z%D;
 
         if(r > 0)
-            return Y/Z + 1;
+            return Z/D + 1;
 
-        return Y/Z;
+        return Z/D;
     }
 }
