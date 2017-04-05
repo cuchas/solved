@@ -9,6 +9,42 @@ public class TapeEquilibrium {
         //somar todos os itens como se fossem dois a partir da posicao
         //soma de 0 até o atual -1
         //soma do atual até o final
+        //O(n^2) ideal O(n)
+
+//        return firstSolution(A);
+        return secondSolution(A);
+    }
+
+    private int secondSolution(int[] A) {
+        int sum = 0;
+        int sum2 = 0;
+        int result = 0;
+
+        for(int i : A) {
+            sum2 += i;
+        }
+
+        for(int i = 1; i < A.length; i++) {
+            sum += A[i-1];
+            sum2 -= A[i-1];
+
+            int r = sum2 - sum;
+
+            if(r < 0)
+                r*= -1;
+
+            if(r < result || result == 0)
+                result = r;
+        }
+
+        return result;
+    }
+
+    private int firstSolution(int[] A) {
+
+        //somar todos os itens como se fossem dois a partir da posicao
+        //soma de 0 até o atual -1
+        //soma do atual até o final
         //Precisa melhorar, quando array 2 elementos falha, somando tudo não dividindo logicamente em 2
 
         //O(n^2) ideal O(n)
