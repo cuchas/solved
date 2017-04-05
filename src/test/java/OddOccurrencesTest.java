@@ -2,7 +2,6 @@ import org.junit.Test;
 import problems.OddOccurrences;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 /**
  * Created by eduardocucharro on 04/04/17.
