@@ -1,5 +1,7 @@
 package problems;
 
+import java.util.Arrays;
+
 /**
  * Created by eduardocucharro on 07/04/17.
  */
@@ -16,25 +18,35 @@ public class MinAvgTwoSlice {
         //senao somo o valor novamente
         //e continuo
 
+        int index = 0;
+        float before = -1;
 
-        int result = -1;
+        for(int i = 1; i < A.length-1; i++) {
 
-        for(int j = 1; j < A.length; j++) {
+            float a = A[i - 1];
+            float b = A[i];
+            float c = A[i + 1];
 
-            int sumBefore = 0;
+            float pair = (a + b) / 2;
+            float three = (a + b + c) / 3;
+            float nextPair = (b + c) / 2;
 
-            for(int i = j; i < A.length; i++) {
+            if(pair < before || before == -1) {
+                before = pair;
+                index = i - 1;
+            }
 
-                int x = (A[i] + A[i - 1] + sumBefore) / (i + 1);
+            if(nextPair < before || before == -1) {
+                before = nextPair;
+                index = i;
+            }
 
-                if(x < sumBefore || result == -1) {
-                    result = j - 1;
-                } else {
-                    sumBefore = x;
-                }
+            if(three < before || before == -1) {
+                before = three;
+                index = i - 1;
             }
         }
 
-        return result;
+        return index;
     }
 }
